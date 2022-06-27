@@ -22,9 +22,6 @@ mongoose.connect('mongodb+srv://xxxx@cluster0.xxxxxxxx/?retryWrites=true&w=major
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 
-//   //debug mongoose
-// mongoose.set('debug', true);
-
 //--CORS ERRORS--: Problems solving & API access (Localhosts 3000 and 4200 communicate)
    app.use((req, res, next) => {
 res.setHeader('Access-Control-Allow-Origin', '*'); //permet d'accéder à notre API depuis n'importe quelle origine 
@@ -33,7 +30,7 @@ res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OP
 next();
 });
 
-//PR-La méthode "app.use" = route générale & la fonction (middleware)
+//La méthode "app.use" = route générale & la fonction (middleware)
 app.use((req,res) => {
   //  res.status(201);
    res.json({message:'Votre requête a bien été reçue !'});
