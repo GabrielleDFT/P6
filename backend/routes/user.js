@@ -2,12 +2,12 @@
 const express = require("express");
 const router = express.Router();
 const userCtrl = require("../controllers/user");
-// const checkInputUser = require("../middleware/check-inputs-user");
+
 
 //--Register--
-router.post("/signup", /*checkInputUser*/ userCtrl.signup);
+router.post("/signup", userCtrl.signup);
 
 //--Log in--
-router.post("/login", /*checkInputUser*/ userCtrl.login);
+router.post("/login", userCtrl.login);
 
 module.exports = router;
