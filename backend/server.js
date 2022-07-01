@@ -4,12 +4,12 @@ const http = require('http');
 //--Import app.js--
 const app = require('./app');  
 
-//--Import Package to use environment variables--
+//--Import Package to use variablesenvironment  --
 const dotenv = require('dotenv');
 const result = dotenv.config();
 
-        //---- SEARCH & DISPLAY USED PORT - REQUEST TO SERVER ----
-//--normalizePort  = function returns a valid port, as a number or string--
+                                                          //---- SEARCH & DISPLAY USED PORT - REQUEST TO SERVER ----
+//--normalizePort  = Returns a valid port, as a number or string--
 const normalizePort = val => {
     const port = parseInt(val, 10);
   
@@ -27,7 +27,7 @@ const port = normalizePort(process.env.PORT || '3000');
 //--Setting Port with "app.set" method : tells to Express which Port to run on--
 app.set('port', port);
 
-//--errorHandler = function searching errors & manage + saved in Server-- 
+//--errorHandler = Searching errors & manage + saved in Server-- 
 const errorHandler = error => {
     if (error.syscall !== 'listen') {
       throw error;
@@ -48,8 +48,7 @@ const errorHandler = error => {
     }
 };
 
-/*createServer = prend en argument la fonction qui sera appelé
-à chaque requête reçue par le Serveur - Les fonctions seront dans app.js*/
+/*createServer = prend en argument la fonction qui sera appelé à chaque requête reçue par le Serveur - Les fonctions seront dans app.js*/
 const server = http.createServer(app);
 
 //--Registered Event Listener : Logging the Port the Server is running on--
