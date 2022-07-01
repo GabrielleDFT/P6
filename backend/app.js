@@ -36,7 +36,7 @@ app.use((req,res) => {
    res.json({message:'Votre requête a bien été reçue !'});
 });
 
-//--Static management - Images--
+//--Static management Images--
 app.use("/images", express.static(path.join(__dirname,"images")));
 
 //--Used Roads--
