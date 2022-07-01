@@ -34,6 +34,13 @@ exports.getOneSauce = (req, res, next) => {
         .catch(error => res.status(404).json({ error }));
 };
 
+//--Display All Sauces--
+exports.getAllSauces = (req, res, next) => {
+    Sauce.find()
+        .then(sauces => res.status(200).json(sauces))
+        .catch(error => res.status(400).json({ error }));
+};
+
 //--Modify Sauce--
 exports.modifySauce = (req, res, next) => {
     const sauceObject = req.file ?
