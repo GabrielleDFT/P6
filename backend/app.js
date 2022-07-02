@@ -15,8 +15,7 @@ app.use(express.json());
 
 //--Import Mongoose for connection to MongoDB--
 mongoose
-  .connect(
-    `mongodb+srv://GDT:bonjour@cluster0.yqap9.mongodb.net/HotTakes?retryWrites=true&w=majority`,
+  .connect(process.env.MONGO_DB_URL,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("Connexion à MongoDB réussie !"))
