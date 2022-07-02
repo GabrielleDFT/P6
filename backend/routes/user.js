@@ -1,0 +1,12 @@
+                 //---- USER ROAD ----
+const express = require("express");
+const router = express.Router();
+const userCtrl = require("../controllers/user");
+
+//--Register--
+router.post("/signup", userCtrl.signup);
+
+//--Log in--
+router.post("/login", userCtrl.login);
+
+module.exports = router;
