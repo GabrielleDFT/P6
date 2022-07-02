@@ -1,19 +1,22 @@
               //---- FILE MANAGEMENT ----
 const multer = require("multer");
+
+//--Dictionary MIME types to define the images format-- 
 const MIME_TYPES = {
   "image/jpg": "jpg",
   "image/jpeg": "jpg",
   "image/png": "png",
 };
 
+//--Create an Object to tell Multer to save & rename Images Files-- 
 const storage = multer.diskStorage({
-    //--File Destination-- 
+    //--File Destination to save Images file-- 
     destination: (req, file, callback) => { 
     callback(null, "images");
   },
     //--File Name-- 
   filename: (req, file, callback) => { 
-    //--Replacement of " " by "_" in file name--
+    //--New name - Replacement of " " by "_" in file name--
     const name = file.originalname.split(" ").join("_"); 
     //--Setting up file extension--
     const extension = MIME_TYPES[file.mimetype]; 
@@ -21,4 +24,4 @@ const storage = multer.diskStorage({
   },
 });
 
-module.exports = multer({ storage: storage }).single('images'); 
+module.exports = multer({ storage: storage }).single('image'); 
