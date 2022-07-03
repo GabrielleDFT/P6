@@ -14,9 +14,9 @@ exports.signup = (req, res, next) => {
 
   //--Hash Password before send it to Database--
   bcrypt
-      //salt = 10 / Number of times the hashing algorithm will be executed
+      //--Salt = 10 => Number of times the hashing algorithm will be executed--
     .hash(req.body.password, 10)
-    // On récupère le hash de mdp qu'on va enregister en tant que nouvel utilisateur dans la BBD mongoDB
+   //--Retrieve password hash & Save it as new User in MongoDB Database--
     .then((hash) => {
       //--Create new User with Mongoose model--
       const user = new User({
