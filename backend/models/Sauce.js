@@ -1,4 +1,4 @@
-                      //---- SAUCE MODEL ----
+//---------------------------- SAUCE MODEL --------------------------------
  const mongoose = require('mongoose');
 
 //--Data Schema--
