@@ -1,4 +1,4 @@
-             //----------------------------------- LOGIC APPLIED TO USER ROADS -----------------------------------
+             //----------------------------------- LOGIC APPLIED TO USER ROUTES -----------------------------------
 
 //--Retrieve User model (with mongoose schema)
 const User = require("../models/User");
