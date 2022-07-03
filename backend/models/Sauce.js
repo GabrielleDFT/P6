@@ -1,5 +1,7 @@
 //---------------------------- SAUCE MODEL --------------------------------
- const mongoose = require('mongoose');
+ 
+//--Creating User Model with Mongoose - Import Mongoose--
+const mongoose = require('mongoose');
 
 //--Data Schema--
 const sauceSchema = mongoose.Schema({
