@@ -1,6 +1,6 @@
 //----------------------------------------------- FILE MANAGEMENT ------------------------------------------------
 
-// On importe multer qui est un package qui permet de gérer les fichiers entrants dans les requêtes HTTP
+//--Import multer => Manage files entered in HTTP requests
 const multer = require('multer');
 
 //--Dictionary MIME types to define the images format-- Create an object
@@ -12,9 +12,9 @@ const MIME_TYPES = {
 
 //--Create an Object to tell Multer to save & rename Images Files-- 
 const storage = multer.diskStorage({
-    //--File Destination to save Images file-- 
+    //--File Destination to save Images-- 
     destination: (req, file, callback) => { 
-    // On passe le dossier images qu'on a créé dans le backend
+    //--Pass Images file created in Backend--
     callback(null, 'images');
   },
     //--File Name-- 
