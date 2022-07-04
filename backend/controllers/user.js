@@ -1,4 +1,4 @@
-             //----------------------------------- LOGIC APPLIED TO USER ROUTES -----------------------------------
+//----------------------------------- LOGIC APPLIED TO USER ROUTES -----------------------------------
 
 //--Retrieve User model (with mongoose schema)
 const User = require("../models/User");
@@ -16,7 +16,7 @@ exports.signup = (req, res, next) => {
   bcrypt
       //--Salt = 10 => Number of times the hashing algorithm will be executed--
     .hash(req.body.password, 10)
-   //--Retrieve password hash & Save it as new User in MongoDB Database--
+    //--Retrieve password hash & Save it as new User in MongoDB Database--
     .then((hash) => {
       //--Create new User with Mongoose model--
       const user = new User({
@@ -55,7 +55,7 @@ exports.login = (req, res, next) => {
           res.status(200).json({
             //Encodage du userId pour la création de nouveau objet(objet et userId seront liés)
             userId: user._id,
-            token: jwt.sign({ userId: user._id }, "RANDOM_TOKEN_SECRET", 
+            token: jwt.sign({ userId: user._id }, process.env.TOKEN, 
             {
               expiresIn: "24h",
             }),
@@ -66,6 +66,5 @@ exports.login = (req, res, next) => {
     })
     .catch((error) => res.status(500).json({ error }));
 };
-
 
 
