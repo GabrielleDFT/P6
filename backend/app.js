@@ -43,3 +43,5 @@ app.use("/api/auth", userRoutes);
 
 //--Export app.js app to have access from Node Server--
 module.exports = app;
+
+
