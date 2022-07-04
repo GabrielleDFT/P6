@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
       const token = req.headers.authorization.split(" ")[1];
                 
       //--Key Decoding - Checking decoded Token with initiated secret key (Cf Controller user)--
-      const decodedToken = jwt.verify(token, "RANDOM_TOKEN_SECRET");
+      const decodedToken = jwt.verify(token, process.env.TOKEN);
                 
       //--ID Recovery in TOKEN - Checking userId sent with request matches to userId encoded in Token--
       const userId = decodedToken.userId;
